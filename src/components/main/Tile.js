@@ -1,28 +1,24 @@
-import React, { useEffect, useState } from "react";
-
-const Tile = () => {
-  const [post, setPost] = useState([]);
-  useEffect(() => {
-    fetch("http://127.0.0.1:8090/api/collections/posts/records")
-      .then((response) => response.json())
-      .then((json) => setPost(json.items[0]));
-  }, []);
-
+import { Link } from "react-router-dom";
+const Tile = ({ post }) => {
+  console.log(post);
   return (
-    <div className="w-80 border border-black h-96 justify-center">
+    <div
+      className="w-80 border border-black justify-center m-4 rounded-md"
+      style={{ height: "30rem" }}
+    >
       <div className="top">
-        <img
-          alt="blog post"
-          src={`pb_data/storage/6ok1f5qrn128fb8/v5hetknb7nudlyg/v_ja_uy9wi_ab_Pn0IujXBJw.png`}
-        />
+        <img alt="blog post" src={`https://images.unsplash.com/`} />
       </div>
       <div className="body flex items-center flex-col h-auto">
-        <h1 className="text-lg font-semibold">{post.title}</h1>
-        <p className="text-sm">{post.date}</p>
-        <p>{post.description}</p>
-        <button className="border border-black rounded-lg w-32 h-8">
+        <h1 className="text-lg font-semibold mt-4">{post.title}</h1>
+        <p className="text-sm mt-2">{post.date}</p>
+        <p className="m-4">{post.description}</p>
+        <Link
+          to={`/post/${post.id}`}
+          className="border border-black rounded-lg w-32 h-8 m-2"
+        >
           Read More...
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -7,6 +7,9 @@ module.exports = {
         "background-main": "#111319",
         "red-main": "#f52225",
       },
+      height: {
+        tileHeight: "32.5rem",
+      },
     },
   },
   plugins: [],

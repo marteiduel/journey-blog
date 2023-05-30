@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 const Tile = ({ post }) => {
-  console.log(post);
   return (
-    <div className="w-80 border border-black justify-center m-4 rounded-md mb-4 h-tileHeight">
-      <div className="top">
+    <div className="w-80 border border-black justify-center m-4 rounded mb-4 h-tileHeight">
+      <div>
         <img
+          className="rounded"
           alt="blog post"
-          src={`https://images.unsplash.com/photo-1666919643134-d97687c1826c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80`}
+          src="assets/demo/hungryBudget.gif"
         />
       </div>
       <div className="body flex items-center flex-col h-full">

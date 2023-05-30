@@ -16,6 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<Post />} />
       </Routes>
+
+      <footer className="bg-background-main"></footer>
     </div>
   );
 }

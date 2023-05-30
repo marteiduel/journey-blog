@@ -7,7 +7,6 @@ const Tiles = () => {
     fetch("https://marteiduel.com/blog/api/all-blogs.php")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setPosts(data);
       })
       .catch((error) => {

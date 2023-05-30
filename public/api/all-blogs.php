@@ -1,4 +1,3 @@
-<!-- https://marteiduel.com/blog/api/all-blogs.php -->
 <?php
 require_once 'config.php';
 

@@ -1,4 +1,3 @@
-<!-- https://marteiduel.com/blog/api/blog.php?id={id} -->
 <?php
 require_once 'config.php';
 

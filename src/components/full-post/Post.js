@@ -23,18 +23,28 @@ const Post = () => {
       });
   }, [id]);
 
+  console.log(`/assets/videos/${post.image}`);
+
   return (
     <div className="m-4">
       <div className="flex justify-center">
-        <video controls autoplay muted className=" object-cover w-3/4">
-          <source src="/assets/videos/hungryBudget.mp4" type="video/mp4" />
-        </video>
+        {post.image ? (
+          <video controls autoplay muted className=" object-cover w-3/4">
+            <source src={`/assets/videos/${post.image}`} type="video/mp4" />
+          </video>
+        ) : (
+          <img
+            src="/assets/pictures/default-image.jpg"
+            alt="blog post"
+            className="w-1/2"
+          />
+        )}
       </div>
       <div
         className="flex flex-col justify-center items-center
       "
       >
-        <div className="flex justify-center flex-col items-center">
+        <div className="flex justify-center flex-col items-center md:w-2/3">
           <h1 className="font-semibold text-3xl mt-3">{post.title}</h1>
           <p className="m-1">{post.date}</p>
           {post.technologies && (

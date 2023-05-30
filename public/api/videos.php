@@ -1,10 +1,18 @@
 <?php
 require_once 'config.php';
 
-header("Access-Control-Allow-Origin: https://marteiduel.com");
-header("Access-Control-Allow-Origin: http://localhost:3000");
-header("Access-Control-Allow-Methods: GET");
-header("Access-Control-Allow-Headers: Origin, Content-Type, Accept");
+$allowedOrigins = [
+    'https://blog.marteiduel.com',
+    'http://localhost:3000'
+];
+
+$origin = $_SERVER['HTTP_ORIGIN'];
+
+if (in_array($origin, $allowedOrigins)) {
+    header("Access-Control-Allow-Origin: " . $origin);
+    header("Access-Control-Allow-Methods: GET");
+    header("Access-Control-Allow-Headers: Origin, Content-Type, Accept");
+}
 
 $servername = DB_SERVER;
 $username = DB_USER;
@@ -19,7 +27,7 @@ if ($conn->connect_error) {
 
 $id = $_GET['id'];
 
-$sql = "SELECT * FROM videos WHERE id = $id";
+$sql = "SELECT * FROM videos WHERE blog_id = $id";
 $stmt = $conn->prepare($sql);
 
 if ($stmt) {

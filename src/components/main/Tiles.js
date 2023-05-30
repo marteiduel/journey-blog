@@ -15,7 +15,7 @@ const Tiles = () => {
   }, []);
   return (
     <div>
-      <div className="flex flew-wrap justify-center items-center">
+      <div className="flex flew-wrap justify-center items-center flex-col md:flex-row">
         {posts.map((post) => {
           return <Tile key={post.id} post={post} />;
         })}

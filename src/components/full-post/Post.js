@@ -27,7 +27,12 @@ const Post = () => {
     <div className="m-4">
       <div className="flex justify-center">
         {post.image ? (
-          <video controls autoplay muted className=" object-cover w-3/4">
+          <video
+            controls
+            autoPlay
+            muted
+            className=" object-cover w-auto md:w-3/4"
+          >
             <source src={`/assets/blog/${post.image}`} type="video/mp4" />
           </video>
         ) : (
@@ -46,11 +51,14 @@ const Post = () => {
           <h1 className="font-semibold text-3xl mt-3">{post.title}</h1>
           <p className="m-1">{post.date}</p>
           {post.technologies && (
-            <TechnologyIcons technologies={post.technologies} />
+            <TechnologyIcons
+              className="flex"
+              technologies={post.technologies}
+            />
           )}
 
           {post.link !== null ? (
-            <div>
+            <div className="flex justify-center items-center flex-col">
               Check out this project:{" "}
               {post.link && (
                 <a
@@ -63,22 +71,20 @@ const Post = () => {
               )}
             </div>
           ) : (
-            <div>
-              <div>
-                Check out my Github Profile:{" "}
-                <a
-                  href="https://github.com/marteiduel"
-                  className="font-semibold text-red-main"
-                  target="{_blank}"
-                >
-                  Github
-                </a>
-              </div>
+            <div className="flex justify-center items-center flex-col">
+              Check out my Github Profile:{" "}
+              <a
+                href="https://github.com/marteiduel"
+                className="font-semibold text-red-main"
+                target="{_blank}"
+              >
+                Github
+              </a>
             </div>
           )}
 
           {post.repo !== null ? (
-            <p className="mt-1">
+            <div className="flex justify-center items-center flex-col mt-1">
               Check out this repo:{" "}
               <a
                 className="font-semibold text-red-main"
@@ -87,7 +93,7 @@ const Post = () => {
               >
                 {post.repo}
               </a>
-            </p>
+            </div>
           ) : null}
           {post.description && (
             <p className="m-3 font-medium md:w-2/3">{post.description}</p>

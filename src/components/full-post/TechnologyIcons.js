@@ -25,7 +25,7 @@ const TechnologyIcons = ({ technologies }) => {
     .split(",")
     .map((icon) => icon.trim().toLowerCase());
   return (
-    <div className="flex">
+    <div className="flex flex-wrap h-auto">
       {icons.map((icon) => (
         <div className="m-1" key={icon}>
           {iconMapping[icon] && (

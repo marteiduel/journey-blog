@@ -11,14 +11,12 @@ const Post = () => {
     fetch(`https://marteiduel.com/blog/api/blog.php?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[0]);
         setPost(data[0]);
       });
 
     fetch(`https://marteiduel.com/blog/api/videos.php?id=${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("videoData", data);
         setVideos(data);
       });
   }, [id]);
@@ -45,7 +43,7 @@ const Post = () => {
 
           {post.link !== null ? (
             <div>
-              Check out this project:
+              Check out this project:{" "}
               {post.link && (
                 <a
                   className="font-semibold text-red-main"
@@ -97,8 +95,8 @@ const Post = () => {
         </div>
 
         {videos.length > 0 && (
-          <div>
-            <div>Videos</div>
+          <div className="flex flex-col justify-center items-center m-4">
+            <div className="font-semibold text-xl">Videos</div>
             <div>
               <Videos videos={videos} />
             </div>

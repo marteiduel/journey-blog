@@ -15,13 +15,15 @@ const iconMapping = {
   wordpress: "wordpress.svg",
   nodejs: "node-js.svg",
   flask: "flask.svg",
+  aws: "aws.svg",
+  googleMapsApi: "google-maps.svg",
+  mongoDB: "mongodb.svg",
 };
 
 const TechnologyIcons = ({ technologies }) => {
   const icons = technologies
     .split(",")
     .map((icon) => icon.trim().toLowerCase());
-  console.log(icons);
   return (
     <div className="flex">
       {icons.map((icon) => (

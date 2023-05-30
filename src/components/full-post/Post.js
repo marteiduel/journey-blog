@@ -23,14 +23,12 @@ const Post = () => {
       });
   }, [id]);
 
-  console.log(`/assets/videos/${post.image}`);
-
   return (
     <div className="m-4">
       <div className="flex justify-center">
         {post.image ? (
           <video controls autoplay muted className=" object-cover w-3/4">
-            <source src={`/assets/videos/${post.image}`} type="video/mp4" />
+            <source src={`/assets/blog/${post.image}`} type="video/mp4" />
           </video>
         ) : (
           <img

@@ -4,11 +4,19 @@ const Tile = ({ post }) => {
   return (
     <div className="w-80 border border-black justify-center m-4 rounded mb-4 h-tileHeight">
       <div>
-        <img
-          className="rounded"
-          alt="blog post"
-          src="assets/demo/hungryBudget.gif"
-        />
+        {post.demoImage ? (
+          <img
+            className="rounded"
+            alt={`${post.title}`}
+            src={`assets/demo/${post.demoImage}`}
+          />
+        ) : (
+          <img
+            className="rounded"
+            src={`assets/pictures/default-image.jpg`}
+            alt={`${post.title}`}
+          />
+        )}
       </div>
       <div className="body flex items-center flex-col h-full">
         <h1 className="text-lg font-semibold mt-4">{post.title}</h1>

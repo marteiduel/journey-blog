@@ -3,8 +3,20 @@ import React from "react";
 const Videos = ({ videos }) => {
   console.log(videos, "videos");
   return (
-    <div>
-      <div>id: {videos[0].id}</div>
+    <div className="flex">
+      {videos.map((video) => {
+        return (
+          <div key={video.id} className="m-4">
+            <div>
+              <li>
+                <a href={`${video.url}`} target="_blank" rel="noreferrer">
+                  {video.title}
+                </a>
+              </li>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -10,6 +10,11 @@ const iconMapping = {
   python: "python.svg",
   tailwind: "tailwind.svg",
   api: "api.svg",
+  redux: "redux.svg",
+  wix: "wix.svg",
+  wordpress: "wordpress.svg",
+  nodejs: "node-js.svg",
+  flask: "flask.svg",
 };
 
 const TechnologyIcons = ({ technologies }) => {

@@ -45,19 +45,6 @@ const Post = () => {
 
           {post.link !== null ? (
             <div>
-              <div>
-                Check out my Github Profile:{" "}
-                <a
-                  href="https://github.com/marteiduel"
-                  className="font-semibold text-red-main"
-                  target="{_blank}"
-                >
-                  Github
-                </a>
-              </div>
-            </div>
-          ) : (
-            <div>
               Check out this project:
               {post.link && (
                 <a
@@ -69,9 +56,22 @@ const Post = () => {
                 </a>
               )}
             </div>
+          ) : (
+            <div>
+              <div>
+                Check out my Github Profile:{" "}
+                <a
+                  href="https://github.com/marteiduel"
+                  className="font-semibold text-red-main"
+                  target="{_blank}"
+                >
+                  Github
+                </a>
+              </div>
+            </div>
           )}
 
-          {post.repo !== null ? null : (
+          {post.repo !== null ? (
             <p className="mt-1">
               Check out this repo:{" "}
               <a
@@ -82,7 +82,7 @@ const Post = () => {
                 {post.repo}
               </a>
             </p>
-          )}
+          ) : null}
           {post.description && (
             <p className="m-3 font-medium md:w-2/3">{post.description}</p>
           )}
@@ -96,7 +96,7 @@ const Post = () => {
           )}
         </div>
 
-        {videos !== null ? null : (
+        {videos.length > 0 && (
           <div>
             <div>Videos</div>
             <div>

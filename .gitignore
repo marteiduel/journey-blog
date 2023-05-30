@@ -22,4 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.config.php
+journey-blog/public/api/config.php
+/public/api/config.php
+api/config.php
+config.php

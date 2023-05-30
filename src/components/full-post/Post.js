@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import TechnologyIcons from "./TechnologyIcons";
+import Videos from "./Videos";
 
 const Post = () => {
   const [post, setPost] = useState([]);
+  const [videos, setVideos] = useState([]);
   const { id } = useParams();
   useEffect(() => {
     fetch(`https://marteiduel.com/blog/api/blog.php?id=${id}`)
@@ -11,6 +13,13 @@ const Post = () => {
       .then((data) => {
         console.log(data[0]);
         setPost(data[0]);
+      });
+
+    fetch(`https://marteiduel.com/blog/api/videos.php?id=${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("videoData", data);
+        setVideos(data);
       });
   }, [id]);
 
@@ -30,36 +39,71 @@ const Post = () => {
         <div className="flex justify-center flex-col items-center">
           <h1 className="font-semibold text-3xl mt-3">{post.title}</h1>
           <p className="m-1">{post.date}</p>
-          {post.technologies && <TechnologyIcons post={post.technologies} />}
+          {post.technologies && (
+            <TechnologyIcons technologies={post.technologies} />
+          )}
 
-          <p>
-            Check out this project:{" "}
-            <a
-              className="font-semibold text-red-main"
-              target="{_blank}"
-              href={`${post.link}`}
-            >
-              {post.link}
-            </a>
-          </p>
-          <p className="mt-1">
-            Check out this repo:{" "}
-            <a
-              className="font-semibold text-red-main"
-              target="{_blank}"
-              href={`${post.repo}`}
-            >
-              {post.repo}
-            </a>
-          </p>
-          <p className="m-3 font-medium md:w-2/3">{post.description}</p>
+          {post.link !== null ? (
+            <div>
+              <div>
+                Check out my Github Profile:{" "}
+                <a
+                  href="https://github.com/marteiduel"
+                  className="font-semibold text-red-main"
+                  target="{_blank}"
+                >
+                  Github
+                </a>
+              </div>
+            </div>
+          ) : (
+            <div>
+              Check out this project:
+              {post.link && (
+                <a
+                  className="font-semibold text-red-main"
+                  target="{_blank}"
+                  href={`${post.link}`}
+                >
+                  {post.link}
+                </a>
+              )}
+            </div>
+          )}
+
+          {post.repo !== null ? null : (
+            <p className="mt-1">
+              Check out this repo:{" "}
+              <a
+                className="font-semibold text-red-main"
+                target="{_blank}"
+                href={`${post.repo}`}
+              >
+                {post.repo}
+              </a>
+            </p>
+          )}
+          {post.description && (
+            <p className="m-3 font-medium md:w-2/3">{post.description}</p>
+          )}
         </div>
         <div className="md:w-3/4 flex justify-center flex-col items-center ">
-          <p className="ml-3 mr-3 md:w-2/3 text-justify">{post.paragraph1}</p>
-          <p className="m-3 md:w-2/3 text-justify">{post.paragraph2}</p>
+          {post.paragraph1 && (
+            <p className="ml-3 mr-3 md:w-2/3 text-justify">{post.paragraph1}</p>
+          )}
+          {post.paragraph2 && (
+            <p className="m-3 md:w-2/3 text-justify">{post.paragraph2}</p>
+          )}
         </div>
-        Videos
-        <div className="mb-4">{post.videos}</div>
+
+        {videos !== null ? null : (
+          <div>
+            <div>Videos</div>
+            <div>
+              <Videos videos={videos} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

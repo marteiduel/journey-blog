@@ -12,8 +12,10 @@ const iconMapping = {
   api: "api.svg",
 };
 
-const TechnologyIcons = ({ post }) => {
-  const icons = post.split(",").map((icon) => icon.trim().toLowerCase());
+const TechnologyIcons = ({ technologies }) => {
+  const icons = technologies
+    .split(",")
+    .map((icon) => icon.trim().toLowerCase());
   console.log(icons);
   return (
     <div className="flex">

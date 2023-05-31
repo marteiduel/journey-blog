@@ -31,6 +31,7 @@ const Post = () => {
             controls
             autoPlay
             muted
+            loop
             className=" object-cover w-auto md:w-3/4"
           >
             <source src={`/assets/blog/${post.image}`} type="video/mp4" />
@@ -84,6 +85,17 @@ const Post = () => {
           )}
 
           {post.repo !== null ? (
+            <div className="flex justify-center items-center flex-col">
+              Check out my Github Profile:{" "}
+              <a
+                href="https://github.com/marteiduel"
+                className="font-semibold text-red-main"
+                target="{_blank}"
+              >
+                Github
+              </a>
+            </div>
+          ) : (
             <div className="flex justify-center items-center flex-col mt-1">
               Check out this repo:{" "}
               <a
@@ -94,7 +106,7 @@ const Post = () => {
                 {post.repo}
               </a>
             </div>
-          ) : null}
+          )}
           {post.description && (
             <p className="m-3 font-medium md:w-2/3">{post.description}</p>
           )}
@@ -105,6 +117,15 @@ const Post = () => {
           )}
           {post.paragraph2 && (
             <p className="m-3 md:w-2/3 text-justify">{post.paragraph2}</p>
+          )}
+          {post.paragraph3 && (
+            <p className="m-3 md:w-2/3 text-justify">{post.paragraph3}</p>
+          )}
+          {post.paragraph4 && (
+            <p className="m-3 md:w-2/3 text-justify">{post.paragraph4}</p>
+          )}
+          {post.paragraph5 && (
+            <p className="m-3 md:w-2/3 text-justify">{post.paragraph5}</p>
           )}
         </div>
 

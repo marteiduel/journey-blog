@@ -18,6 +18,7 @@ const iconMapping = {
   aws: "aws.svg",
   googleMapsApi: "google-maps.svg",
   mongoDB: "mongodb.svg",
+  reactspring: "reactSpring.svg",
 };
 
 const TechnologyIcons = ({ technologies }) => {

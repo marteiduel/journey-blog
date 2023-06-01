@@ -59,6 +59,10 @@ const Post = () => {
           )}
 
           {post.link !== null ? (
+            <div className="font-bold mb-2 mt-2">
+              This repository is private but I can give you access upon request.
+            </div>
+          ) : (
             <div className="flex justify-center items-center flex-col">
               Check out this project:{" "}
               {post.link && (
@@ -70,17 +74,6 @@ const Post = () => {
                   {post.link}
                 </a>
               )}
-            </div>
-          ) : (
-            <div className="flex justify-center items-center flex-col">
-              Check out my Github Profile:{" "}
-              <a
-                href="https://github.com/marteiduel"
-                className="font-semibold text-red-main"
-                target="{_blank}"
-              >
-                Github
-              </a>
             </div>
           )}
 
@@ -108,7 +101,7 @@ const Post = () => {
             </div>
           )}
           {post.description && (
-            <p className="m-3 font-medium md:w-2/3">{post.description}</p>
+            <p className="m-3 font-bold md:w-2/3">{post.description}</p>
           )}
         </div>
         <div className="md:w-3/4 flex justify-center flex-col items-center ">

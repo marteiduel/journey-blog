@@ -40,6 +40,12 @@ const iconMapping = {
   zapier: "zapier.svg",
   "media queries": "media-queries.jpg",
   uiux: "uiux.png",
+  "gateway AWS": "api-gateway.png",
+  "cloudwatch AWS": "cloudwatch.webp",
+  lambda: "lambda.png",
+  graphql: "graphql.svg",
+  "customer service": "customerservice.svg",
+  agile: "agile.svg",
 };
 
 const TechnologyIcons = ({ technologies }) => {

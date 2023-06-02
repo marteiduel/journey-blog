@@ -40,7 +40,7 @@ const Post = () => {
           <img
             src="/assets/pictures/default-image.jpg"
             alt="blog post"
-            className="w-1/2"
+            className=" object-cover w-auto md:w-3/4 rounded-lg"
           />
         )}
       </div>

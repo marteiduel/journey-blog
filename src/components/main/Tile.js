@@ -23,7 +23,7 @@ const Tile = ({ post }) => {
           />
         )}
       </div>
-      <div className="body flex items-center flex-col h-full">
+      <div className="body flex items-center flex-col">
         <h1 className="text-2xl font-semibold mt-4">{post.title}</h1>
         <p className="text-sm mt-2">{post.date}</p>
         <p className="m-4">{post.description}</p>

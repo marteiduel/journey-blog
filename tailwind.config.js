@@ -10,6 +10,9 @@ module.exports = {
       height: {
         tileHeight: "32.5rem",
       },
+      width: {
+        tileWidth: "22.5rem",
+      },
       screens: {
         mobileS: "320px",
         // => @media (min-width: 320px) { ... }

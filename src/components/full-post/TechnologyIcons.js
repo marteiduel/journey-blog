@@ -46,6 +46,8 @@ const iconMapping = {
   graphql: "graphql.svg",
   "customer service": "customerservice.svg",
   agile: "agile.svg",
+  git: "git.png",
+  github: "github.png",
 };
 
 const TechnologyIcons = ({ technologies }) => {

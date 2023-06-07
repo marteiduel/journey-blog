@@ -17,7 +17,43 @@ function App() {
         <Route path="/post/:id" element={<Post />} />
       </Routes>
 
-      <footer className="bg-background-main"></footer>
+      <footer className="h-auto bg-background-main p-4">
+        <div className="flex justify-evenly">
+          <p className="text-white text-center text-sm">
+            <Link className="text-red-main hover:text-white" to="/">
+              Home
+            </Link>
+          </p>
+          <p className="text-white text-center text-sm">
+            Linkedin:{" "}
+            <a
+              className="text-red-main hover:text-white"
+              href="https://www.linkedin.com/in/marteichagoya/"
+            >
+              marteichagoya
+            </a>
+          </p>
+          <p className="text-white text-center text-sm">
+            Portfolio:{" "}
+            <a
+              className="text-red-main hover:text-white"
+              href="https://marteiduel.com/"
+            >
+              marteiduel.com
+            </a>
+          </p>
+          <p className="text-white text-center text-sm">
+            Github:{" "}
+            <a
+              className="text-red-main hover:text-white"
+              href="https://github.com/marteiduel"
+            >
+              marteichagoya
+            </a>
+          </p>
+        </div>
+        <div></div>
+      </footer>
     </div>
   );
 }

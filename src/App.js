@@ -12,7 +12,7 @@ function App() {
         </div>
       </nav>
 
-      <Routes>
+      <Routes className="w-full">
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<Post />} />
       </Routes>

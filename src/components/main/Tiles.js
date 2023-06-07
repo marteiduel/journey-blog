@@ -14,8 +14,8 @@ const Tiles = () => {
       });
   }, []);
   return (
-    <div>
-      <div className="flex flew-wrap justify-center items-center flex-col md:flex-row">
+    <div className="flex justify-evenly">
+      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4">
         {posts.map((post) => {
           return <Tile key={post.id} post={post} />;
         })}

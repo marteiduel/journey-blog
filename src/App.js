@@ -24,33 +24,30 @@ function App() {
               Home
             </Link>
           </p>
-          <p className="text-white text-center text-sm">
-            Linkedin:{" "}
-            <a
-              className="text-red-main hover:text-white"
-              href="https://www.linkedin.com/in/marteichagoya/"
-            >
-              marteichagoya
-            </a>
-          </p>
-          <p className="text-white text-center text-sm">
-            Portfolio:{" "}
-            <a
-              className="text-red-main hover:text-white"
-              href="https://marteiduel.com/"
-            >
-              marteiduel.com
-            </a>
-          </p>
-          <p className="text-white text-center text-sm">
-            Github:{" "}
-            <a
-              className="text-red-main hover:text-white"
-              href="https://github.com/marteiduel"
-            >
-              marteichagoya
-            </a>
-          </p>
+          <a
+            className="text-red-main hover:text-white"
+            href="https://www.linkedin.com/in/marteichagoya/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            className="text-red-main hover:text-white"
+            href="https://marteiduel.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Portfolio
+          </a>
+          <a
+            className="text-red-main hover:text-white"
+            href="https://github.com/marteiduel"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
         </div>
         <div></div>
       </footer>

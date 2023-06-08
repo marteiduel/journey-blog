@@ -59,10 +59,6 @@ const Post = () => {
           )}
 
           {post.link !== null ? (
-            <div className="font-bold mb-2 mt-2">
-              This repository is private but I can give you access upon request.
-            </div>
-          ) : (
             <div className="flex justify-center items-center flex-col">
               Check out this project:{" "}
               {post.link && (
@@ -74,6 +70,10 @@ const Post = () => {
                   {post.link}
                 </a>
               )}
+            </div>
+          ) : (
+            <div className="font-bold mb-2 mt-2">
+              This repository is private but I can give you access upon request.
             </div>
           )}
 

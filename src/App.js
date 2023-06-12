@@ -11,13 +11,27 @@ function App() {
           <Link to="/">Home</Link>
         </div>
         <div className="mr-4 text-white text-lg font-semibold hover:text-red-main">
-          <a href="marteiduel.com">Portfolio</a>
+          <a href="https://marteiduel.com/" target="_blank" rel="noreferrer">
+            Portfolio
+          </a>
         </div>
         <div className="mr-4 text-white text-lg font-semibold hover:text-red-main">
-          <a href="https://www.linkedin.com/in/marteichagoya/">LinkedIn</a>
+          <a
+            href="https://www.linkedin.com/in/marteichagoya/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
         </div>
         <div className="mr-4 text-white text-lg font-semibold hover:text-red-main">
-          <a href="https://github.com/marteiduel">Github</a>
+          <a
+            href="https://github.com/marteiduel"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
         </div>
       </nav>
 

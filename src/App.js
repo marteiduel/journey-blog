@@ -6,9 +6,18 @@ import Post from "./components/full-post/Post";
 function App() {
   return (
     <div className="h-screen">
-      <nav className="flex h-14 justify-end bg-background-main items-center">
+      <nav className="flex h-14 justify-center bg-background-main items-center">
         <div className="mr-4 text-white text-lg font-semibold hover:text-red-main">
           <Link to="/">Home</Link>
+        </div>
+        <div className="mr-4 text-white text-lg font-semibold hover:text-red-main">
+          <a href="marteiduel.com">Portfolio</a>
+        </div>
+        <div className="mr-4 text-white text-lg font-semibold hover:text-red-main">
+          <a href="https://www.linkedin.com/in/marteichagoya/">LinkedIn</a>
+        </div>
+        <div className="mr-4 text-white text-lg font-semibold hover:text-red-main">
+          <a href="https://github.com/marteiduel">Github</a>
         </div>
       </nav>
 
@@ -26,19 +35,19 @@ function App() {
           </p>
           <a
             className="text-red-main hover:text-white"
-            href="https://www.linkedin.com/in/marteichagoya/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-          <a
-            className="text-red-main hover:text-white"
             href="https://marteiduel.com/"
             target="_blank"
             rel="noreferrer"
           >
             Portfolio
+          </a>
+          <a
+            className="text-red-main hover:text-white"
+            href="https://www.linkedin.com/in/marteichagoya/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
           </a>
           <a
             className="text-red-main hover:text-white"
